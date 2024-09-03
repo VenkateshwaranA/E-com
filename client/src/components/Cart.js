@@ -20,7 +20,7 @@ const Cart = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {cartItems.map((item) => (
             <div key={item.product._id} className="bg-white shadow-md rounded-lg p-4">
-              <img src={item.product.image} alt={item.product.name} className="w-full h-32 object-cover mb-4" />
+              <img src={item.product.imageUrl} alt={item.product.name} className="w-full h-32 object-cover mb-4" />
               <h2 className="text-lg font-semibold">{item.product.name}</h2>
               <p className="text-gray-600">${item.product.sellingPrice} x {item.quantity}</p>
               <button onClick={() => handleRemoveFromCart(item.product._id)} className="mt-4 bg-red-500 text-white py-2 px-4 rounded">

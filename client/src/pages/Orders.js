@@ -1,21 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchOrders } from '../redux/actions';
-import OrderSummary from '../components/OrderSummary';
-import { USER_LOGIN_SUCCESS } from '../redux/types';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchOrders } from "../redux/actions";
+import OrderSummary from "../components/OrderSummary";
+import { USER_LOGIN_SUCCESS } from "../redux/types";
 
 const Orders = () => {
   const dispatch = useDispatch();
   const { orders } = useSelector((state) => state.orders);
 
-
   useEffect(() => {
     try {
       let data = localStorage.getItem("userInfo");
       console.log("dss", data);
-    
-        dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
-    
+
+      dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
     } catch (err) {
       console.log(err, "error in initila");
     }

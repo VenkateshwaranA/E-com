@@ -13,26 +13,18 @@ const Home = () => {
   useEffect(() => {
     try {
       let data = localStorage.getItem("userInfo");
-      console.log("dss", data);
       if (data == null) {
         setIslogin(false);
       } else {
         setIslogin(true);
         dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
+        dispatch(fetchProducts());
       }
     } catch (err) {
       console.log(err, "error in initila");
     }
   }, [dispatch]);
 
-  useEffect(() => {
-    let data = localStorage.getItem("userInfo");
-    console.log("dss", data);
-    if (data != null) {
-      dispatch(fetchProducts());
-
-    }
-  }, [dispatch]);
 
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const OrderSummary = ({ order }) => {
+  console.log({order})
   return (
     <div className="bg-white shadow-md rounded-lg p-4 mb-2">
       <h2 className="text-lg font-semibold mb-2">Order ID: {order._id}</h2>
@@ -8,7 +9,7 @@ const OrderSummary = ({ order }) => {
       <p>Items:</p>
       <ul className="list-disc ml-4">
         {order.products.map((item) => (<>
-          <li key={item.product._id}>{item.product.product} x {item.quantity}</li>
+          <li key={item.product._id}>{item.product.name} x {item.quantity}</li>
          
         </>
         ))}

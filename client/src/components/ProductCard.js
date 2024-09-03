@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/actions';
 import { toast } from "react-toastify";
 const ProductCard = ({ product }) => {
+  console.log('prod',product);
+  
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -13,7 +15,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
-      <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
+      <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h2 className="text-lg font-semibold">{product.name}</h2>
         <p className="text-gray-600">{product.description}</p>
